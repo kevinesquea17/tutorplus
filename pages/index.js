@@ -1,9 +1,14 @@
 import Head from 'next/head'
+import Nabvar from '../components/Nabvar'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Students from '../public/students-02.png'
+import {GiChemicalDrop, GiWorld} from 'react-icons/gi'
+import {TbMathSymbols} from 'react-icons/tb'
+import {MdOutlineDeveloperMode} from 'react-icons/md'
+import {BsBook} from 'react-icons/bs'
+import {ImStatsBars} from 'react-icons/im'
+import TutorList from '../components/TutorList'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -14,110 +19,100 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <section className='flex flex-col h-[100vh] w-[90%] mx-auto space-y-4 mb-12'>
+        <Nabvar />
+        <section className='bg-purple-200 flex-1 rounded-md flex justify-between items-center px-8'>
+            <div className='w-1/2'>
+              <h2 className='text-6xl font-semibold leading-tight w-[90%] mb-4'>Move Beyond the limitations of e-learning.</h2>
+              <p className='text-gray-700 mb-6'>Lorem ipsum, or lipsum as it is sometimes known.</p>
+              <div className='flex space-x-6 items-center'>
+                  <button className='text-white px-6 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-lg shadow-purple-500'>Get Started</button>
+                  <button className='rounded-full border-[1px] border-gray-800 shadow-lg px-6 py-3'>Become a Tutor</button>
+              </div>
+            </div>
+            <div className='w-1/2 h-full flex justify-center items-center relative'>
+              <div className='w-[80%] h-[80%] bg-purple-500 rounded-tl-full rounded-tr-full overflow-hidden flex justify-center p-2 shadow-md shadow-purple-500'>
+                <Image 
+                  src={Students}
+                  alt="students"
+                  className='object-contain'
+                />
+              </div>
+              <div className='absolute w-40 h-20 bg-white shadow-sm rounded opacity-70 right-0'>
+
+              </div>
+              <div className='absolute w-40 h-20 bg-white shadow-sm rounded opacity-70 left-5 top-12'>
+
+              </div>
+            </div>
+        </section>
+      </section>
+
+      <section className='w-[90%] mx-auto py-6 mb-8'>
+          <h3 className='text-4xl font-semibold mb-8'>Explore by our <span className='text-purple-600 font-bold'>categories</span></h3>
+          <div className='grid grid-cols-6 gap-4'>
+            {/* Category */}
+            <div className='bg-orange-100 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-orange-400 p-4 rounded-full mb-6'>
+                <GiChemicalDrop className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-orange-500 font-semibold'>Chemistry</h4>
+            </div>
+            {/* End category */}
+
+            {/* Category */}
+            <div className='bg-red-100 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-red-400 p-4 rounded-full mb-6'>
+                <TbMathSymbols className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-red-500 font-semibold'>Math</h4>
+            </div>
+            {/* End category */}
+
+            {/* Category */}
+            <div className='bg-purple-200 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-purple-400 p-4 rounded-full mb-6'>
+                <MdOutlineDeveloperMode className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-purple-600 font-semibold'>Dev</h4>
+            </div>
+            {/* End category */}
+
+            {/* Category */}
+            <div className='bg-lime-200 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-lime-400 p-4 rounded-full mb-6'>
+                <BsBook className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-lime-600 font-semibold'>Language</h4>
+            </div>
+            {/* End category */}
+
+            {/* Category */}
+            <div className='bg-teal-100 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-teal-500 p-4 rounded-full mb-6'>
+                <ImStatsBars className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-teal-600 font-semibold'>Stats</h4>
+            </div>
+            {/* End category */}
+
+            {/* Category */}
+            <div className='bg-fuchsia-200 px-4 py-6 rounded shadow-sm h-40 flex flex-col items-center'>
+              <div className='bg-fuchsia-600 p-4 rounded-full mb-6'>
+                <GiWorld className='text-3xl text-gray-900' />
+              </div>
+              <h4 className='text-lg text-fuchsia-600 font-semibold'>Geography</h4>
+            </div>
+            {/* End category */}
           </div>
+      </section>
+
+      <section className='bg-purple-200'>
+        <div className='w-[90%] mx-auto py-12'>
+          <h3 className='text-4xl font-semibold mb-12'>Explore our <span className='text-purple-600 font-bold'>tutors</span></h3>
+          <TutorList />
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      </section>
     </>
   )
 }
